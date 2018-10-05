@@ -1,5 +1,7 @@
 var rp = require('request-promise');
 
+const baseUrl = "http://localhost:4001/fans";
+
 const doRequest = (opts) => {
     return new Promise((resolve, reject) => {
         rp(opts)
@@ -10,7 +12,7 @@ const doRequest = (opts) => {
 
 exports.findOne = (id) => {
     const opts = {
-        uri: `http://localhost:3000/fans/${id}`,
+        uri: `${baseUrl}/${id}`,
         json: true
     }
 
@@ -21,7 +23,7 @@ exports.findOne = (id) => {
 
 exports.findAll = (limit) => {
     const opts = {
-        uri: `http://localhost:3000/fans`,
+        uri: baseUrl,
         json: true
     }
 
@@ -35,7 +37,7 @@ exports.createFan = (fan) => {
     fan.created  = new Date();
 
     const opts = {
-        uri: `http://localhost:3000/fans`,
+        uri: baseUrl,
         json: true,
         method: 'POST',
         body: fan

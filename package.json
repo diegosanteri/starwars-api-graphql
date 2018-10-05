@@ -4,7 +4,7 @@
   "description": "Starwars api using graphql",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/ | ./node_modules/json-server/bin/index.js  --watch db.json"
+    "start": "nodemon src/ | ./node_modules/json-server/bin/index.js  --watch db.json --port 4001"
   },
   "dependencies": {
     "apollo-server": "^2.0.5",
